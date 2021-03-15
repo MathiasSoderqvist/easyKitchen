@@ -1,7 +1,5 @@
-
-const db = require('../models');
-
-const {Menu, Dish} = db;
+// const db = require('../models/index'); => db.Menu
+const { Menu, Dish } = require('../models');
 
 //get all menus
 exports.getAll = async (req, res) => {
@@ -34,12 +32,10 @@ exports.getOneMenu = async (req, res) => {
 
 // create a menu
 exports.createMenu = async (req, res) => {
-  console.log('req.body -> ', req.body);
+  console.log('req.body -> ', req.body.DishId);
   try {
     const newMenu = await Menu.create(req.body);
-
-    newMenu.addDish(req.body.dishId);
-    console.log(newMenu);
+    newMenu.addDish(req.body.DishId);
     res.status(201);
     res.send(newMenu);
   } catch (e) {
@@ -51,7 +47,6 @@ exports.createMenu = async (req, res) => {
 // delete a menu
 exports.deleteMenu = async (req, res) => {
   const title = req.body.title;
-  const { id } = req.params;
   Menu.destroy({
     where: { title: title },
   })
