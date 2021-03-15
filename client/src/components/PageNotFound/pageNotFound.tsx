@@ -3,7 +3,7 @@ import icecream from '../img/ice-cream.png'
 
 function PageNotFound () {
   return (
-    <div className="container-404" role="404-page">
+    <div className="container-404" aria-label="page not found">
      <img src={icecream} alt="ice-cream" className="pic"></img>
      <div>
        <h2 className="text">
