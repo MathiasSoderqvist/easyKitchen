@@ -14,7 +14,6 @@ const mockMenus = [
   }
 ];
 
-
   it('should render a menu it', () => {
     render(
         <MenuList menus={mockMenus} />
