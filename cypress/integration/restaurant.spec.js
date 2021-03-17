@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-const testDishes = [{title: 'cypressito', description: 'those who know, know', price: '5'}, {title: 'cypressilla', description: 'a dish best served in test env.', price: '7'}];
+const testDishes = [{title: 'cypizza', description: 'those who know, know', price: '5'}, {title: 'cypressilla', description: 'a dish best served in test env.', price: '7'}];
 const testMenuTitle = 'GÖTT Deliverygood';
 
 describe(`Creating a new dish: ${testDishes[0].title} `, () => {
