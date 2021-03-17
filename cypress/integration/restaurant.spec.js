@@ -1,6 +1,10 @@
 /// <reference types="Cypress" />
 
+// ******* TODO: CURRENTLY DOESN'T ENFORCE RUNNING THE APP IN TEST MODE **********
+
 const { testDishes, testMenuTitle } = require('./mocks')
+const { runServer } = require('../../server');
+const { Dish, Model } = require('../../server/models');
 
 describe(`Creating a new dish: ${testDishes[0].title} `, () => {
   it('visits the Happy Kitchen app', () => {

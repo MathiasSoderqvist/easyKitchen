@@ -1,7 +1,11 @@
 /// <reference types="Cypress" />
 
+// ******* TODO: CURRENTLY DOESN'T ENFORCE RUNNING APP IN TEST MODE **********
 // TODO: THESE WILL BE SEEDED TO DB, FOR NOW RUN AFTER THE CYPRESS TEST FOR RESTAURANTS
-const { testDishes, testOrder, testMenuTitle } = require('./mocks')
+
+
+const { testDishes, testOrder, testMenuTitle } = require('./mocks');
+// Cypress.env('NODE_ENV', 'test');
 
 describe(`Creating a new order: ${testMenuTitle} `, () => {
   it('visits the Happy Kitchen app', () => {
