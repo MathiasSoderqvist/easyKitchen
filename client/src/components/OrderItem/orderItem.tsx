@@ -11,7 +11,7 @@ const OrderItem: React.FC<OrderItemProps> = ({ order })  => {
     <div className='orderItem'>
       <p>Order ID: {order.id}</p>
       <p>Name: {order.clientName}</p>
-      <p>Address:  {order.clientAddress}</p>
+      <p>Address: {order.clientAddress}</p>
       <p>Phone: {order.clientPhone}</p>
       <p>Comments: {order.comments}</p>
 

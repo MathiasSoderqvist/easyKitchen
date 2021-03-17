@@ -27,6 +27,7 @@ const DishForm: React.FC<Props & RouteComponentProps> = ({ addNewDish }) => {
       </style>
       <form
         className="dish-form"
+        aria-label='dish-form'
         onSubmit={handleSubmit(onSubmit)}>
         <h2>Add a new dish</h2>
         <div className="form-control">
@@ -34,6 +35,7 @@ const DishForm: React.FC<Props & RouteComponentProps> = ({ addNewDish }) => {
             className="dishTitle"
             type="text"
             placeholder="Title"
+            aria-label="title-input"
             name="title"
             ref={register({ required: "Title required" })}
           />
@@ -43,6 +45,7 @@ const DishForm: React.FC<Props & RouteComponentProps> = ({ addNewDish }) => {
             className="dishDescription"
             type="text"
             placeholder="Description"
+            aria-label="description-input"
             name="description"
             ref={register({ required: "Description required" })}
           />
@@ -55,6 +58,7 @@ const DishForm: React.FC<Props & RouteComponentProps> = ({ addNewDish }) => {
             min="0"
             placeholder="Price"
             name="price"
+            aria-label="price-input"
             ref={register({ required: "Price required" })}
           />
         </div>
@@ -62,6 +66,7 @@ const DishForm: React.FC<Props & RouteComponentProps> = ({ addNewDish }) => {
           <input
             className="add-dish-btn"
             type="submit"
+            aria-label='submit-button'
           />
         </div>
         {errors.title && <p>{errors.title.message}</p>}

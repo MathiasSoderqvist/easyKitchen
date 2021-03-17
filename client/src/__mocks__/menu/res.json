@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "title": "Menu",
+    "createdAt": "2021-03-15T10:29:11.936Z",
+    "updatedAt": "2021-03-15T10:29:11.936Z",
+    "Dishes": [
+      {
+        "id": 1,
+        "title": "Parueba",
+        "description": "Sepia",
+        "price": "12.50",
+        "image": null,
+        "createdAt": "2021-03-15T10:29:04.986Z",
+        "updatedAt": "2021-03-15T10:29:04.986Z",
+        "DishesPerMenu": {
+          "createdAt": "2021-03-15T10:29:12.018Z",
+          "updatedAt": "2021-03-15T10:29:12.018Z",
+          "DishId": 1,
+          "MenuId": 1
+        }
+      },
+      {
+        "id": 2,
+        "title": "Parueba",
+        "description": "Sepia",
+        "price": "12.50",
+        "image": null,
+        "createdAt": "2021-03-15T10:29:06.321Z",
+        "updatedAt": "2021-03-15T10:29:06.321Z",
+        "DishesPerMenu": {
+          "createdAt": "2021-03-15T10:29:12.018Z",
+          "updatedAt": "2021-03-15T10:29:12.018Z",
+          "DishId": 2,
+          "MenuId": 1
+        }
+      }
+    ]
+  }
+]

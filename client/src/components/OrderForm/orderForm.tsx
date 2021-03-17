@@ -43,77 +43,84 @@ const OrderForm: React.FC<OrderProps&RouteComponentProps> = ({ createNewOrder, m
 
   return (
     <form
-      className="order-form"
-      onSubmit={handleSubmit(onSubmit)}>
+      className='order-form'
+      data-testid='order-form'
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+        @import
+        url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
       </style>
-      <div className="container">
-        <h2 className="title-order">Hi Friend! What would you like to eat today?</h2>
+      <div className='container'>
+        <h2 className='title-order'>
+          Hi Friend! What would you like to eat today?
+        </h2>
         {menus && menus.length > 0 && (
           <>
-            <div className="elem-dish">
-              {menus[0]?.Dishes.map((dish) =>
-                <div key={dish.id} className="flexChild">
-                  <h3 className="title">{dish.title}</h3>
-                  <p className="description">{dish.description}</p>
-                  <p >€ {dish.price}</p>
-                  <input type="checkbox"
+            <div className='elem-dish' data-testid='elem-dish'>
+              {menus[0]?.Dishes.map((dish) => (
+                <div key={dish.id} className='flexChild'>
+                  <h3 className='title'>{dish.title}</h3>
+                  <p className='description'>{dish.description}</p>
+                  <p>€ {dish.price}</p>
+                  <input
+                    type='checkbox'
                     onChange={handleCheckBox}
                     value={dish.id}
                     name={dish.title}
                     ref={register}
-                    className="checkbox"
+                    className='checkbox'
                   />
                 </div>
-              )}
+              ))}
             </div>
           </>
         )}
-        <div className="input-field-container">
-          <h2 className="contact-details"> CONTACT INFORMATON</h2>
+        <div className='input-field-container'>
+          <h2 className='contact-details'> CONTACT INFORMATON</h2>
           <input
-            className="clientName"
-            type="text"
-            placeholder="Name"
-            name="clientName"
-            ref={register({ required: "Name required" })}
+            className='clientName'
+            aria-label='client-name-input'
+            type='text'
+            placeholder='Name'
+            name='clientName'
+            ref={register({ required: 'Name required' })}
           />
           <label></label>
           <input
-            className="clientAddress"
-            type="text"
-            placeholder="Address"
-            name="clientAddress"
-            ref={register({ required: "Address required" })}
+            className='clientAddress'
+            aria-label='client-address-input'
+            type='text'
+            placeholder='Address'
+            name='clientAddress'
+            ref={register({ required: 'Address required' })}
           />
           <label></label>
           <input
-            className="clientPhone"
-            type="number"
-            placeholder="Phone"
-            name="clientPhone"
+            className='clientPhone'
+            aria-label='client-phone-input'
+            type='number'
+            placeholder='Phone'
+            name='clientPhone'
             ref={register()}
           />
           <label></label>
           <input
-            className="comments"
-            type="text"
-            placeholder="Comments"
-            name="comments"
+            className='comments'
+            type='text'
+            aria-label='comments-input'
+            placeholder='Comments'
+            name='comments'
             ref={register()}
           />
           <label></label>
-          <input
-            className="send-button"
-            type="submit"
-          />
+          <input className='send-button' type='submit' />
           {errors.title && <p>{errors.title.message}</p>}
           {errors.description && <p>{errors.description.message}</p>}
           {errors.price && <p>{errors.price.message}</p>}
         </div>
       </div>
-    </form >
+    </form>
   );
 
 }

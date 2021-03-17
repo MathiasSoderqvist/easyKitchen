@@ -59,7 +59,7 @@ const OrderList: React.FC<OrderListProps> = ({ order })  => {
               <StyledTableCell align="right">Dishes</StyledTableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody data-testid="table-body">
             {order?.map((order) => (
               <StyledTableRow key={order.id}>
                 <StyledTableCell component="th" scope="row">

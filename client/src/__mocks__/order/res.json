@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "clientName": "jasja",
+    "clientAddress": "gran via",
+    "clientPhone": 667320015,
+    "comments": "I like spicy",
+    "createdAt": "2021-03-15T12:20:05.445Z",
+    "updatedAt": "2021-03-15T12:20:05.445Z",
+    "Dishes": [
+      {
+        "id": 1,
+        "title": "Parueba",
+        "description": "Sepia",
+        "price": "12.50",
+        "image": null,
+        "createdAt": "2021-03-15T10:29:04.986Z",
+        "updatedAt": "2021-03-15T10:29:04.986Z",
+        "DishesPerOrder": {
+          "createdAt": "2021-03-15T12:20:05.597Z",
+          "updatedAt": "2021-03-15T12:20:05.597Z",
+          "DishId": 1,
+          "OrderId": 1
+        }
+      },
+      {
+        "id": 2,
+        "title": "Parueba",
+        "description": "Sepia",
+        "price": "12.50",
+        "image": null,
+        "createdAt": "2021-03-15T10:29:06.321Z",
+        "updatedAt": "2021-03-15T10:29:06.321Z",
+        "DishesPerOrder": {
+          "createdAt": "2021-03-15T12:20:05.597Z",
+          "updatedAt": "2021-03-15T12:20:05.597Z",
+          "DishId": 2,
+          "OrderId": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "clientName": "Pruttelebatsj",
+    "clientAddress": "Kiezeleweeg 34",
+    "clientPhone": 8919823,
+    "comments": "Gein appelemoos",
+    "createdAt": "2021-03-16T14:29:34.302Z",
+    "updatedAt": "2021-03-16T14:29:34.302Z",
+    "Dishes": [
+      {
+        "id": 1,
+        "title": "Parueba",
+        "description": "Sepia",
+        "price": "12.50",
+        "image": null,
+        "createdAt": "2021-03-15T10:29:04.986Z",
+        "updatedAt": "2021-03-15T10:29:04.986Z",
+        "DishesPerOrder": {
+          "createdAt": "2021-03-16T14:29:34.571Z",
+          "updatedAt": "2021-03-16T14:29:34.571Z",
+          "DishId": 1,
+          "OrderId": 4
+        }
+      }
+    ]
+  }
+]
