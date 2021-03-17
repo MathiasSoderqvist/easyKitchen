@@ -72,7 +72,7 @@ function App () {
   const containerStyle = {
     height: "calc(100vh - 112px)",
     overFlow: "auto",
-    TextAlign: "center",
+    textAlign: "center",
 
   }
 
