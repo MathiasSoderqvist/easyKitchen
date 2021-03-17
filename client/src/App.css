@@ -1,16 +1,17 @@
 * {
 box-sizing: border-box;
-} 
+}
 
  body {
   overflow: hidden;
+  text-align: center;
  }
 
 .content {
   overflow-x: scroll;
   font-family: 'Noto Sans JP', sans-serif;
-} 
+}
 
-.content::-webkit-scrollbar { 
-  display: none; 
+.content::-webkit-scrollbar {
+  display: none;
 }
