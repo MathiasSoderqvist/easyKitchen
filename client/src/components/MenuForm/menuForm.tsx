@@ -50,10 +50,11 @@ const MenuForm: React.FC<Props & RouteComponentProps> = ({ dishes, createNewMenu
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit(onSubmit)}>
+    <form className="form" onSubmit={handleSubmit(onSubmit)} data-testid='menu-form' aria-label='menu-form'>
       <div className="menu-title">
         <input
           className="menuTitle_field"
+          aria-label='menu-title-input'
           type="text"
           placeholder="Insert Menu name"
           name="title"
@@ -67,6 +68,7 @@ const MenuForm: React.FC<Props & RouteComponentProps> = ({ dishes, createNewMenu
             <p >{dish.description}</p>
             <p >€ {dish.price}</p>
             <input type="checkbox"
+              aria-label="menu-item-checkbox"
               onChange={handleCheckBox}
               value={dish.id}
               name={dish.title}
@@ -77,7 +79,7 @@ const MenuForm: React.FC<Props & RouteComponentProps> = ({ dishes, createNewMenu
         )}
       </div>
       {noSelectionError && <p>Please select at least one dish to create the menu.</p> }
-      <input type="submit" className="onSubmit" />
+      <input type="submit" className="onSubmit" aria-label='dish-submit-input' />
     </form>
   );
 }
