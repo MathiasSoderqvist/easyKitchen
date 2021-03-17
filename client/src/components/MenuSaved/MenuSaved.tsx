@@ -3,7 +3,7 @@ import './MenuSaved.css'
 function MenuSaved () {
   return (
 
-    <div className="container-menuSaved">
+    <div className="container-menuSaved" role="main">
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
       </style>
