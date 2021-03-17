@@ -1,7 +1,6 @@
 /// <reference types="Cypress" />
 
-const testDishes = [{title: 'cypizza', description: 'those who know, know', price: '5'}, {title: 'cypressilla', description: 'a dish best served in test env.', price: '7'}];
-const testMenuTitle = 'GÖTT Deliverygood';
+const { testDishes, testMenuTitle } = require('./mocks')
 
 describe(`Creating a new dish: ${testDishes[0].title} `, () => {
   it('visits the Happy Kitchen app', () => {

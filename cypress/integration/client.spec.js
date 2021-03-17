@@ -1,9 +1,7 @@
 /// <reference types="Cypress" />
 
 // TODO: THESE WILL BE SEEDED TO DB, FOR NOW RUN AFTER THE CYPRESS TEST FOR RESTAURANTS
-const testDishes = [{title: 'cypizza', description: 'those who know, know', price: '5'}, {title: 'cypressilla', description: 'a dish best served in test env.', price: '7'}];
-const testOrder = {name: 'Salvatore Pariota', address: 'Carrer D\'avila', phone: '1234', comments: 'Sin cebollas por favor'};
-const testMenuTitle = 'GÖTT Deliverygood';
+const { testDishes, testOrder, testMenuTitle } = require('./mocks')
 
 describe(`Creating a new order: ${testMenuTitle} `, () => {
   it('visits the Happy Kitchen app', () => {
