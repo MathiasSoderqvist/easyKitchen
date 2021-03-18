@@ -1,0 +1,16 @@
+.dish {
+  background-color: white;
+  box-shadow: 2px 3px 2px 3px  #888888;
+  margin:20px 60px 50px 60px;
+  width: 450px;
+  height: 350px;
+  padding: 10px;
+  position: relative;
+}
+
+.edit-dish{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
