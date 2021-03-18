@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { Dish } from 'interfaces/dish';
 import { Menu } from 'interfaces/menu';
+import MenuDishCard from 'components/MenuDishCard/menuDishCard';
 
 //TODO UPTADE => navigate to menu item by Id
 
@@ -63,19 +64,7 @@ const MenuForm: React.FC<Props & RouteComponentProps> = ({ dishes, createNewMenu
       </div>
       <div className="menu-item">
         {dishes?.map((dish) =>
-          <div className="dish" key={dish.id}>
-            <h3 >{dish.title}</h3>
-            <p >{dish.description}</p>
-            <p >€ {dish.price}</p>
-            <input type="checkbox"
-              aria-label="menu-item-checkbox"
-              onChange={handleCheckBox}
-              value={dish.id}
-              name={dish.title}
-              ref={register}
-              className="checkbox"
-            />
-          </div>
+          <MenuDishCard dish={dish} handleCheckBox={handleCheckBox} register={register}/>
         )}
       </div>
       {noSelectionError && <p>Please select at least one dish to create the menu.</p> }
