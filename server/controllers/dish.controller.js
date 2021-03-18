@@ -42,4 +42,21 @@ exports.deleteDish = async (req, res) => {
     });
 };
 
-//TODO: modify a dish (if needed later)
+//TODO: update a dish (if needed later)
+exports.updateDish = async (req, res) => {
+  const {dishReference, ...updates} = req.body;
+
+  try{
+    const updateResponse = await Dish.update(updates, {
+      where: {title: dishReference},
+      returning: true,
+      plain: true
+    });
+    console.log(updateResponse);
+    res.status(201);
+    res.send(updateResponse[1].dataValues); //sends back the updated object
+  } catch (e) {
+    console.log(e); //eslint-disable-line no-console
+    res.status(500).send(e);
+  }
+};
