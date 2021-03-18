@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     clientPhone: {
-      type: DataTypes.INTEGER(15),
+      type: DataTypes.INTEGER,
     },
     comments: {
       type: DataTypes.STRING(500),

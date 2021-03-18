@@ -15,10 +15,10 @@ exports.runServer = async (port) => {
   app.use(express.json());
   app.use(router);
 
-  return db.sequelize.sync().then(() => {
-    console.log('db connected');
+  return db.sequelize.sync({force: true}).then(() => {
+    // console.log('db connected');
     app.listen(PORT, () => {
-      console.log(`Server started on http://localhost:${PORT} 🚀`);
+      // console.log(`Server started on http://localhost:${PORT} 🚀`);
     });
     return app;
   })

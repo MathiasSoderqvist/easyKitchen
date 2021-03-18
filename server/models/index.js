@@ -5,7 +5,7 @@ const basename = path.basename(__filename);
 require('dotenv').config();
 const db = {};
 
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV;
 
 const setup = require(__dirname + '/../config/config.js')[env]
 
@@ -13,7 +13,7 @@ const setup = require(__dirname + '/../config/config.js')[env]
 const sequelize = new Sequelize(setup.database, setup.username, setup.password, {
   host:  setup.host,
   dialect: 'postgres',
-  logging: console.log,
+  logging: false,
   pool: {
     max: 5,
     min: 0,
@@ -49,10 +49,10 @@ db.Sequelize = Sequelize;
 sequelize
   .authenticate()
   .then(() => {
-    console.log('Connection has been established succesfully.');
+    //console.log('Connection has been established succesfully.');
   })
   .catch((error) => {
-    console.error('Unable to connect to the database:', error);
+    //console.error('Unable to connect to the database:', error);
   });
 
 module.exports = db;

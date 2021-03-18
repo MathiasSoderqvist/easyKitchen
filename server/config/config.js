@@ -5,7 +5,7 @@ const loadConfig = {
     password: process.env.DB_PASSWORD,
     host: process.env.DB_HOST,
     dialect: 'postgres',
-    logging: true,
+    logging: console.log,
   },
   test: {
     username: process.env.DB_USER,
