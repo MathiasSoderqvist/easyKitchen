@@ -52,7 +52,6 @@ exports.updateDish = async (req, res) => {
       returning: true,
       plain: true
     });
-    console.log(updateResponse);
     res.status(201);
     res.send(updateResponse[1].dataValues); //sends back the updated object
   } catch (e) {
