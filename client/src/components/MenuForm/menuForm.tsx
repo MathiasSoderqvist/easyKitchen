@@ -64,7 +64,7 @@ const MenuForm: React.FC<Props & RouteComponentProps> = ({ dishes, createNewMenu
       </div>
       <div className="menu-item">
         {dishes?.map((dish) =>
-          <MenuDishCard dish={dish} handleCheckBox={handleCheckBox} register={register}/>
+          <MenuDishCard dish={dish} key={dish.id} handleCheckBox={handleCheckBox} register={register}/>
         )}
       </div>
       {noSelectionError && <p>Please select at least one dish to create the menu.</p> }
