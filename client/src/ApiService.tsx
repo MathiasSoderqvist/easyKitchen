@@ -1,4 +1,4 @@
-import { Dish } from 'interfaces/dish';
+import { Dish, dishUpdateRequest } from 'interfaces/dish';
 import { NewMenuRequest } from 'interfaces/menu';
 import { Order } from 'interfaces/order';
 
@@ -24,6 +24,14 @@ const addDish = (body: Dish) => {
   return fetchRequest('/dish', httpOptions);
 }
 
+const updateDish = (body: dishUpdateRequest) => {
+  const httpOptions = {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  };
+  return fetchRequest('/dish', httpOptions);
+}
 
 //MENUS
 const getMenus = () => {
@@ -81,6 +89,7 @@ export default {
   getMenus,
   getOrders,
   addDish,
+  updateDish,
   createMenu,
   createOrder,
   getMenu
