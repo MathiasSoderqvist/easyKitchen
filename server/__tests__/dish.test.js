@@ -10,6 +10,9 @@ beforeAll(async () => {
   const app = await runServer(process.env.TEST_PORT);
   request = supertest(app);
 })
+afterAll(async () => {
+  await sequelize.close();
+})
 
 describe('GET requests for dishes', () => {
   beforeAll(async () => {
@@ -69,10 +72,6 @@ describe('DELETE requests for dishes', () => {
     await Dish.bulkCreate(mockDishes);
   });
 
-  afterAll(async () => {
-    await sequelize.close();
-  })
-
   it('should reply with status code 204', async () => {
     const response = await request.delete('/dish').send({title: mockDishes[0].title});
     expect(response.status).toBe(204);
@@ -87,3 +86,22 @@ describe('DELETE requests for dishes', () => {
     expect(dishes[0].price).toBe('9.00');
   });
 });
+
+describe('UPDATE requests for dishes', () => {
+  beforeAll(async () => {
+    await Dish.destroy({where: {}});
+    await Dish.bulkCreate(mockDishes);
+  });
+  it('should reply with status code 201', async () => {
+    const response = await request.put('/dish').send({dishReference: mockDishes[0].title, title:'nomorepizza',
+    description: 'I changed it'});
+    expect(response.status).toBe(201);
+  })
+  it('should reply with the updated dish in the body', async () => {
+    const response = await request.put('/dish').send({dishReference: 'nomorepizza', title:'yesmorepizza',
+    description: 'I changed it again!'});
+    expect(response.body.title).toBe('yesmorepizza');
+    expect(response.body.description).toBe('I changed it again!');
+    expect(response.body.price).toBe(mockDishes[0].price + '.00');
+  })
+})

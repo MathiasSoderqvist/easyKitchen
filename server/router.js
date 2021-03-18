@@ -9,7 +9,7 @@ const menuCtrl = require('./controllers/menu.controller')
 router.get('/dish', dishCtrl.getAll)
 router.post('/dish', dishCtrl.addDish)
 router.delete('/dish', dishCtrl.deleteDish)
-
+router.put('/dish', dishCtrl.updateDish);
 
 
 //MENU
